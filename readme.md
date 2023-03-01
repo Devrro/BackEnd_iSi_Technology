@@ -24,9 +24,15 @@ views.\
 3. LimitOfsetPagination is set as default pagination class for all views.
 4. Look the 2 paragraph
 5. Django is installed and working.
+6. Custom UserModel is created and provided in settings.py
 
 **How to run**\
-Use console command in .backend directory "python manage.py runserver"
-After it`s better to use [Postman agent](https://www.postman.com/devrro/workspace/testing/overview)  for all requests, except those in "/admin" URL path.
-Dont forget to set environment in upper right corner menu!
-All views are created with AllowAny permission class, so have fun playing with them :)
+- Install pipenv
+- create \ run virtualenv using pipenv from .backend directory with dependecies in Pipfile
+  - > pipenv install  
+- Use console command in .backend directory (Windows)
+  - > python manage.py runserver
+
+After it`s better to use **[Postman agent](https://www.postman.com/devrro/workspace/testing/overview)**  for all requests, except those in "/admin" URL path.
+Don't forget to set environment in upper right corner menu!
+All views are created with AllowAny permission class.
