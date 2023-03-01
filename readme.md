@@ -39,4 +39,6 @@ views.
 
 After it`s better to use **[Postman agent](https://www.postman.com/devrro/workspace/testing/overview)**  for all requests, except those in "/admin" URL path.
 Don't forget to set environment in upper right corner menu!
-All views are created with AllowAny permission class.
+
+
+**All views are created with AllowAny permission class**
