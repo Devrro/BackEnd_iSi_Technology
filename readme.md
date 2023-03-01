@@ -30,11 +30,10 @@ views.
 
 ## **How to run**
 - Install pipenv
-- create \ run virtualenv using pipenv from .backend directory with dependecies in Pipfile
+- In **project** folder run:
   - > pipenv install  
-- Create database and commit migrations
+- In .backend directory run:
   - > python manage.py migrate
-- Run console command in .backend directory (Windows)
   - > python manage.py runserver
 
 After it`s better to use **[Postman agent](https://www.postman.com/devrro/workspace/testing/overview)**  for all requests, except those in "/admin" URL path.
