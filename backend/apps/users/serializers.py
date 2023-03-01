@@ -6,12 +6,17 @@ from apps.users.models import ProfileModel
 UserModel = get_user_model()
 
 
+class ProfileSerializer(ModelSerializer):
+    class Meta:
+        model = ProfileModel
+        fields = "__all__"
+
+
 class UserSerializer(ModelSerializer):
     class Meta:
         model = UserModel
         fields = (
             'id',
-            'login',
             'email',
             'password',
             'created_at',
