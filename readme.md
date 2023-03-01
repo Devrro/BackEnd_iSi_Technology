@@ -29,6 +29,8 @@ views.
 6. Custom UserModel is created and provided in settings.py
 
 ## **How to run**
+- Create .env file in project directory and set value to SECRET_KEY
+  - > SECRET_KEY=**(YOUR KEY HERE)**
 - Install pipenv
 - In **project** folder run:
   - > pipenv install  
