@@ -90,8 +90,8 @@ class MessageCreateView(CreateAPIView):
     permission_classes = (AllowAny,)
 
     def create(self, request, *args, **kwargs):
-        sender = self.kwargs.get("sender")
-        thread = self.kwargs.get("thread")
+        sender = self.kwargs.get("sender_id")
+        thread = self.kwargs.get("thread_id")
         data = self.request.data
         data["sender"] = sender
         data["thread"] = thread
@@ -108,7 +108,7 @@ class MessageInThreadListView(ListAPIView):
     permission_classes = (AllowAny,)
 
     def get_queryset(self):
-        thread = self.kwargs.get("thread")
+        thread = self.kwargs.get("thread_id")
         qs = self.queryset.filter(thread_id=thread)
         return qs
 
