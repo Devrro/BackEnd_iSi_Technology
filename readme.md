@@ -29,14 +29,17 @@ views.
 6. Custom UserModel is created and provided in settings.py
 
 ## **How to run**
+- Create .env file in project directory and set value to SECRET_KEY
+  - > SECRET_KEY=**(Your key here)**
 - Install pipenv
-- create \ run virtualenv using pipenv from .backend directory with dependecies in Pipfile
+- In **project** folder run:
   - > pipenv install  
-- Create database and commit migrations
+- In .backend directory run:
   - > python manage.py migrate
-- Run console command in .backend directory (Windows)
   - > python manage.py runserver
 
 After it`s better to use **[Postman agent](https://www.postman.com/devrro/workspace/testing/overview)**  for all requests, except those in "/admin" URL path.
 Don't forget to set environment in upper right corner menu!
-All views are created with AllowAny permission class.
+
+
+**All views are created with AllowAny permission class**

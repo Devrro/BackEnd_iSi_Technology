@@ -62,6 +62,10 @@ class DeleteThreadView(DestroyAPIView):
     serializer_class = ThreadSerializer
     permission_classes = (AllowAny,)
 
+    def get_object(self):
+        thread_id = self.kwargs.get("thread_id")
+        return get_object_or_404(self.queryset, pk=thread_id)
+
 
 class ThreadListByUserIdView(GenericAPIView):
     queryset = ThreadModel.objects.all()
