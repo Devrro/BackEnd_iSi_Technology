@@ -9,8 +9,8 @@ Secondly, I have to admit that tasks were done with not 100% accuracy of the pro
 Let`s go down and see what I did.
 
 
-1. App "simple_chat" was created. Every model in it has mentioned in task fields. There was some
-little desire to change the models and add more fields, but I decided to act according to task items.
+1. App "simple_chat" was created. Every model in it has mentioned in task fields.I was thinking about changing
+models and add more fields to them, but I decided to act according to task items.
 It was not possible (at least for now) to quickly disable the ability to create a "Thread" instance with more than two users.
 But in the end I found a few ways to do that. 
     - I. Create model contraints -> Since "participant field" is models.ManyToMany field it was not possible
