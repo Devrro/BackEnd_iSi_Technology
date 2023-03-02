@@ -43,18 +43,15 @@ class ThreadListCreateView(ListCreateAPIView):
         qs_exists = qs
         object_exists = qs_exists.exists()
         if object_exists:
-            paginated_queryset = self.paginate_queryset(qs)
-            serializer = self.serializer_class(instance=paginated_queryset, many=True)
-            return self.get_paginated_response(serializer.data)
-
+            serializer = self.serializer_class(instance=qs.first(), many=False)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         new_thread = self.queryset.create()
         for user in data:
             user_model = get_object_or_404(self.user_queryset, id=user)
             new_thread.participants.add(user_model)
             new_thread.save()
-        paginated_queryset = self.paginate_queryset(new_thread)
-        serializer = self.serializer_class(paginated_queryset, many=True)
-        return self.get_paginated_response(serializer.data)
+        serializer = self.serializer_class(new_thread, many=False)
+        return Response(serializer.data, status.HTTP_200_OK)
 
 
 class DeleteThreadView(DestroyAPIView):
