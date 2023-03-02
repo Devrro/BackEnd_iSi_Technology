@@ -90,11 +90,11 @@ class MessageCreateView(CreateAPIView):
     permission_classes = (AllowAny,)
 
     def create(self, request, *args, **kwargs):
-        sender = self.kwargs.get("sender_id")
-        thread = self.kwargs.get("thread_id")
+        sender_id = self.kwargs.get("sender_id")
+        thread_id = self.kwargs.get("thread_id")
         data = self.request.data
-        data["sender"] = sender
-        data["thread"] = thread
+        data["sender"] = sender_id
+        data["thread"] = thread_id
         serializer = self.serializer_class(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -108,8 +108,8 @@ class MessageInThreadListView(ListAPIView):
     permission_classes = (AllowAny,)
 
     def get_queryset(self):
-        thread = self.kwargs.get("thread_id")
-        qs = self.queryset.filter(thread_id=thread)
+        thread_id = self.kwargs.get("thread_id")
+        qs = self.queryset.filter(thread_id=thread_id)
         return qs
 
 
