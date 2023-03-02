@@ -108,8 +108,8 @@ class MessageInThreadListView(ListAPIView):
     permission_classes = (AllowAny,)
 
     def get_queryset(self):
-        thread = self.kwargs.get("thread")
-        qs = self.queryset.filter(thread_id=thread)
+        thread_id = self.kwargs.get("thread_id")
+        qs = self.queryset.filter(thread_id=thread_id)
         return qs
 
 
