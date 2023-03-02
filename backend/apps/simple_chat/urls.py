@@ -18,7 +18,7 @@ urlpatterns = [
     path("/create_message_in_thread/<int:thread_id>/<int:sender_id>", MessageCreateView.as_view(),
          name="create_message_view"),
     path("/get_messages_in_thread/<int:thread_id>", MessageInThreadListView.as_view(), name="get_messages_in_thread"),
-    path("/is_messages_read/", MessagesIsRead.as_view(), name="is_messages_read"),
+    path("/is_messages_read", MessagesIsRead.as_view(), name="is_messages_read"),
     path("/user_unread_messages_count/<int:user_id>",
          CountUserUnreadMessages.as_view(),
          name="user_unread_messages_count")
